@@ -2,7 +2,7 @@
 
 This project is an AI-powered medical chatbot that provides accurate, context-aware answers to user questions using content from The Gale Encyclopedia of Medicine – Second Edition. It combines Flask for the web interface, LangChain for retrieval-augmented generation, Hugging Face sentence-transformer embeddings for semantic understanding, and Pinecone as the vector database for storing and retrieving document chunks. OpenAI's GPT-4o-mini model generates concise answers based on the retrieved context. The chatbot is ideal for learning, research, and exploring trusted medical information.
 
-Features
+#Features
 •	Context-aware answers based on medical documents
 •	Retrieval-augmented generation using LangChain
 •	Semantic search powered by Hugging Face embeddings
@@ -10,7 +10,7 @@ Features
 •	Natural language responses via OpenAI GPT-4o-mini
 •	Web-based chat interface using Flask
 
-Tech Stack
+#Tech Stack
 •	Python 3.x
 •	Flask
 •	LangChain
