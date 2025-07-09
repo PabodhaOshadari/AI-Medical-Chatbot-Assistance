@@ -1,84 +1,45 @@
 # AI-Medical-Chatbot-Assistance
 
-This project develops an AI-powered medical chatbot designed to provide intelligent responses based on a curated knowledge base. It leverages advanced natural language processing (NLP) and retrieval-augmented generation (RAG) techniques to deliver accurate and contextually relevant medical information.
+This project is an AI-powered medical chatbot that provides accurate, context-aware answers to user questions using content from The Gale Encyclopedia of Medicine – Second Edition. It combines Flask for the web interface, LangChain for retrieval-augmented generation, Hugging Face sentence-transformer embeddings for semantic understanding, and Pinecone as the vector database for storing and retrieving document chunks. OpenAI's GPT-4o-mini model generates concise answers based on the retrieved context. The chatbot is ideal for learning, research, and exploring trusted medical information.
 
-✨ Features
+Features
+•	Context-aware answers based on medical documents
+•	Retrieval-augmented generation using LangChain
+•	Semantic search powered by Hugging Face embeddings
+•	Efficient vector storage and retrieval with Pinecone
+•	Natural language responses via OpenAI GPT-4o-mini
+•	Web-based chat interface using Flask
 
-    Contextual Document Retrieval: Utilizes Pinecone for efficient vector-based storage and retrieval of medical documents.
+Tech Stack
+•	Python 3.x
+•	Flask
+•	LangChain
+•	Hugging Face Transformers
+•	Pinecone
+•	OpenAI GPT-4o-mini
+•	dotenv (for managing API keys)
 
-    Semantic Search: Employs Hugging Face sentence transformers to perform semantic searches, ensuring relevant document chunks are retrieved based on the meaning of the query.
+How to Run
+•	1. Clone the repository:
+•	   git clone https://github.com/yourusername/ai-medical-chatbot.git
 
-    Intelligent Responses: Generates comprehensive and coherent answers using OpenAI's GPT-4o-mini language model.
+•	2. Navigate into the project folder:
+•	   cd ai-medical-chatbot
 
-    Medical Knowledge Ingestion: Processes and extracts information from PDF documents, allowing for easy expansion of the knowledge base.
+•	3. Install dependencies:
+•	   pip install -r requirements.txt
 
-    Web-based Chat Interface: Provides a user-friendly chat interface built with Flask for seamless interaction.
+•	4. Add your medical PDFs to the Data/ folder
 
-    Secure API Key Handling: Manages sensitive API keys securely using .env files.
+•	5. Create a .env file with your API keys:
+•	   OPENAI_API_KEY=your_openai_api_key
+•	   PINECONE_API_KEY=your_pinecone_api_key
 
-📚 Data Source
+•	6. Generate the vector store:
+•	   python src/create_vector_store.py
 
-The chatbot's knowledge base is built upon data extracted from:
+•	7. Start the Flask app:
+•	   python app.py
 
-    The Gale Encyclopedia of Medicine – Second Edition
 
-Documents from this resource are processed, split into manageable chunks, and embedded into vector representations for efficient retrieval.
 
-🛠️ Tech Stack
-
-    Python 3.x
-
-    Flask: Web framework for the chat interface.
-
-    LangChain: Framework for building LLM applications, facilitating integration of various components.
-
-    Hugging Face Transformers: Used for embedding models (sentence transformers) for semantic search.
-
-    Pinecone: Vector database for storing and retrieving document embeddings.
-
-    OpenAI GPT (gpt-4o-mini): Large language model for generating intelligent responses.
-
-    dotenv: For managing environment variables and API keys.
-
-⚙️ Setup Instructions
-
-Follow these steps to set up and run the AI Medical Chatbot:
-
-1. Clone the Repository
-
-Bash
-
-git clone https://github.com/yourusername/ai-medical-chatbot.git
-cd ai-medical-chatbot
-
-2. Install Dependencies
-
-Bash
-
-pip install -r requirements.txt
-
-3. Configure Environment Variables
-
-Create a .env file in the root directory of the project and add your API keys:
-
-OPENAI_API_KEY=your_openai_api_key
-PINECONE_API_KEY=your_pinecone_api_key
-
-Replace your_openai_api_key and your_pinecone_api_key with your actual API keys.
-
-4. Add PDF Files
-
-Place your medical PDF files (e.g., "The Gale Encyclopedia of Medicine – Second Edition") inside the Data/ folder.
-
-5. Create or Update Vector Store
-
-This step processes your PDF documents, splits them into chunks, embeds them, and uploads them to your Pinecone index.
-Bash
-
-python src/create_vector_store.py
-
-6. Start the Flask Web App
-
-Bash
-
-python app.py
